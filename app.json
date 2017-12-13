@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/lists/lists",
+    "pages/details/details",
+    "pages/logs/logs",
+    "pages/shop/logs",
+    "pages/member/home/home"
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath":"images/tabBar/homepage.png",
+        "selectedIconPath":"images/tabBar/homepage_fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/lists/lists",
+        "iconPath": "images/tabBar/createtask.png",
+        "selectedIconPath": "images/tabBar/createtask_fill.png",
+        "text": "列表"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar/financial.png",
+        "selectedIconPath": "images/tabBar/financial_fill.png",
+        "text": "抽奖"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar/shoppingcart.png",
+        "selectedIconPath": "images/tabBar/shoppingcart_fill.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/member/home/home",
+        "iconPath": "images/tabBar/mine.png",
+        "selectedIconPath": "images/tabBar/mine_fill.png",
+        "text": "我"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":true
+  }
+}

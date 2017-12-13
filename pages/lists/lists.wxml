@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="pro-list weui-grids">
+    <block wx:for="{{currLists}}" wx:for-item="item" wx:key="*this">
+      <navigator url="/pages/details/details?productId={{item.activityproductId}}" class="pro-item weui-grid" hover-class="weui-grid_active">
+        <view class="item-box">
+          <image class="img" lazy-load="true" src="http://www.yfq.cn:8899/fileserver/medias/{{item.mainImageUrl}}" />
+          <view class="txt">
+            <view class="weui-grid__label">{{item.productName}}</view>
+            <view class="weui-flex">
+              <view class="price weui-flex__item">
+                <text>￥{{item.salePrice}}</text>
+              </view>
+              <view class="sold weui-flex__item">
+                <text>月销{{item.sortOrder}}笔</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

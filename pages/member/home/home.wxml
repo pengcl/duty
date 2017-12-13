@@ -1,0 +1,2 @@
+<!--home.wxml-->
+<text>{{userInfo.nickName}}</text>

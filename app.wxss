@@ -1,0 +1,11 @@
+/**app.wxss**/
+@import "weui.wxss";
+@import "icons.wxss";
+
+.weui-grids {
+  border: none;
+}
+.weui-grid {
+  border: none;
+  padding: 0;
+}
