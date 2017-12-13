@@ -1,0 +1,6 @@
+swiper {
+  height: 250px;
+}
+swiper navigator {
+  text-align: center;
+}

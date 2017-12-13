@@ -1,9 +1,9 @@
-<swiper indicator-dots="{{indicatorDots}}"  
+<swiper class="prod-swiper" indicator-dots="{{indicatorDots}}"  
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
-      <block wx:for="{{prod}}">  
+      <block wx:for="{{prod.phoneTypes[0].mediaProductList}}" wx:key="*this">  
         <swiper-item>  
            <navigator url="{{item.link}}" hover-class="navigator-hover">  
-            <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
+            <image bindload="imageLoad" style="width:200px;height:200px;" src="http://www.yfq.cn:8899/fileserver/medias/{{item.mediaUrl}}" class="slide-image"/>  
            </navigator>   
         </swiper-item>  
       </block>  

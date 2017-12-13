@@ -3,12 +3,13 @@ const utils = require('../../utils/util.js')
 
 Page({
   data: {
-    imgUrls: [],
+    imgHeights: [],
     prod:{},
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
+    bdw: wx.getSystemInfoSync().windowWidth
   },
   onLoad: function (options) {
     var that = this;
@@ -23,15 +24,18 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        var imgUrls = [];
-        for (var i = 0; i < data.phoneTypes[0].mediaProductList.length; i++) {
-          $scope.imgUrls.push("http://www.yfq.cn:8899/fileserver/medias/" + data.phoneTypes[0].mediaProductList[i].mediaUrl);
-        }
+        
         that.setData({
           prod: res.data
         });
       }
     })
+  },
+  imageLoad: function (e) {
+    //获取图片真实宽高
+    var imgWidth = this.data.bdw * 0.5;
+    var imgHeight = imgWidth;
+    //计算的高度值
   },
   onReachBottom: function () {//下拉刷新
     var that = this;
