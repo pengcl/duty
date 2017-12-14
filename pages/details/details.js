@@ -1,8 +1,15 @@
 //lists.js
-const utils = require('../../utils/util.js')
+const utils = require('../../utils/util.js');
+const exhibitionHall = require('../../data/data.js');
 
 Page({
   data: {
+    exhibitionHalls: [],
+    citys: exhibitionHall.CITY,
+    exhibitionHall:{},
+    city:{},
+    pickerShow:false,
+    index: 0,
     imgHeights: [],
     prod:{},
     indicatorDots: true,
@@ -13,7 +20,10 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    console.log(options.productId);
+    that.setData({
+      exhibitionHalls: exhibitionHall.EXHIBITIONHALL[this.data.citys[0].tag]
+    });
+    console.log(that.data.exhibitionHalls);
     wx.request({
       url: utils.apiHost + '/lists/' + options.productId,//获取商品列表
       data: {
@@ -23,8 +33,6 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res);
-        
         that.setData({
           prod: res.data
         });
@@ -37,12 +45,19 @@ Page({
     var imgHeight = imgWidth;
     //计算的高度值
   },
-  onReachBottom: function () {//下拉刷新
-    var that = this;
-    var currPage = that.data.currPage + 1;
-    that.setData({
-      currPage: currPage,//更新当然页数
-      currLists: that.data.lists.slice(0, that.data.pageSize * currPage)//获取当前页数据
+  bindChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      city: this.data.citys[e.detail.value[0]]
+    });
+    this.setData({
+      citys: this.data.exhibitionHalls[this.data.citys[e.detail.value[0]].tag]
+    })
+    console.log(this.data.citys);
+  },
+  picker:function(e){
+    this.setData({
+      pickerShow: true
     });
   }
 })

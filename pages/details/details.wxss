@@ -4,3 +4,7 @@ swiper {
 swiper navigator {
   text-align: center;
 }
+
+.container {
+  background: #f8f8f8;
+}

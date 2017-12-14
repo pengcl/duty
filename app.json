@@ -20,13 +20,13 @@
         "pagePath": "pages/lists/lists",
         "iconPath": "images/tabBar/createtask.png",
         "selectedIconPath": "images/tabBar/createtask_fill.png",
-        "text": "列表"
+        "text": "订购"
       },
       {
         "pagePath": "pages/index/index",
         "iconPath": "images/tabBar/financial.png",
         "selectedIconPath": "images/tabBar/financial_fill.png",
-        "text": "抽奖"
+        "text": "案例"
       },
       {
         "pagePath": "pages/index/index",
